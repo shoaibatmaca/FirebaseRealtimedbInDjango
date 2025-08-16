@@ -1,0 +1,22 @@
+<!-- userinfo/templates/list_users.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Users</title>
+</head>
+<body>
+    <h1>User List</h1>
+    <a href="{% url 'add_user' %}">Add New User</a>
+    <ul>
+        {% if users %}
+            {% for key, user in users.items %}
+                <li>{{ user.name }} - {{ user.email }}</li>
+            {% endfor %}
+        {% else %}
+            <li>No users found.</li>
+        {% endif %}
+    </ul>
+</body>
+</html>
